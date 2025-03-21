@@ -1,5 +1,5 @@
+// Data
 const farmAnimals = 'cow horse sheep pig chicken';
-
 const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
 
 const muppet = {
@@ -24,6 +24,53 @@ const nestedMuppet = {
   nestedJob: 'Host of The Muppet Show',
   nestedPartner: 'Miss Piggy'
 };
+
+// Strings
+
+// 1. Assign variables based on animal sounds
+const [moo, neigh, baa, oink, cluck] = farmAnimals.split(' ');
+
+// 2. Exclude horse, rename variables
+const [bessie, , dolly, babe, little] = farmAnimals.split(' ');
+
+// 3. Exclude chicken, rename based on colors
+const [blackAndWhite, , black, pink] = farmAnimals.split(' ');
+
+// Arrays
+
+// 4. Assign variables for colors
+const [red, orange, yellow, green, blue, indigo, violet] = colors;
+
+// 5. Exclude indigo, use first letters
+const [r, o, y, g, b, , v] = colors;
+
+// 6. Assign only indigo
+const [, , , , , indg] = colors;
+
+// Objects
+
+// 7. Destructure muppet object
+const { muppetName, color, song, job, partner } = muppet;
+
+// 8. Destructure nestedMuppet for songs 2 and 4, job, and partner
+const {
+  album: {
+    theMuppetMovie: { song2, song4 }
+  },
+  nestedJob,
+  nestedPartner
+} = nestedMuppet;
+
+// Logging results to verify correctness
+console.log(moo, neigh, baa, oink, cluck); // Sounds
+console.log(bessie, dolly, babe, little); // Four animals without horse
+console.log(blackAndWhite, black, pink); // Three animals without chicken
+console.log(red, orange, yellow, green, blue, indigo, violet); // Colors
+console.log(r, o, y, g, b, v); // Colors without indigo
+console.log(indg); // Only indigo
+console.log(muppetName, color, song, job, partner); // Muppet details
+console.log(song2, song4, nestedJob, nestedPartner); // Nested muppet details
+
 
 // Strings
 
